@@ -24,11 +24,15 @@ private val viewModel:BoredviewViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.status.observe(viewLifecycleOwner,
-            {
-                newStatus ->binding.resultTextView.text = viewModel.status.value.toString()
-            })
+        viewModel.description.observe(viewLifecycleOwner
+        ) {
+            binding.resultTextView.text = viewModel.description.value
+        }
 
+        viewModel.isBusy.observe(viewLifecycleOwner
+        ) {
+            binding.progressIndicator.isIndeterminate = viewModel.isBusy.value ?: true
+        }
         binding.actionButton.setOnClickListener { viewModel.getActivity() }
     }
 }
