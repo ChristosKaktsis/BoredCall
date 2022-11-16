@@ -1,5 +1,5 @@
 # BoredCall
-This project is a simple app that calls BoredApi
+This project is a simple app that calls BoredApi </br>
 using retrofit2 to do the GET request 
 Using Moshi to convert the JSON to BoredActivity Object
 Basic viewModel with MutableLiveData, also fun getActivity using coroutineScope
